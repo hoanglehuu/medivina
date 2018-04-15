@@ -1,0 +1,649 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script> -->
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="./js/owl.carousel.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(window).on('load', function() {
+  $("#owl-banner").owlCarousel({
+    items:1,
+    singleItem : true,
+    autoPlay:true,
+    autoHeight : true,
+    autoplayTimeout: 3000,
+    animateOut: 'slideOutLeft',
+    animateIn: 'slideInRight',
+    loop:true,
+    nav: true,
+    navText: ['','']
+  });
+
+  $('.owl-carousel').owlCarousel({
+    items:1,
+    loop:true,
+    center:true,
+    margin:10,
+    URLhashListener:true,
+    autoplayHoverPause:true,
+    startPosition: 'URLHash',
+    autoHeight: true,
+    //animateOut: 'fadeOut',
+    animateOut: 'slideOutLeft',
+    animateIn: 'slideInRight',
+    autoplay: true,
+    autoplayTimeout: 3000
+    });
+});
+</script>
+<script>
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 50) {
+       $('div.navbar').addClass('navbar-default');
+       $('div.navbar-r-menu').addClass('nav-down');
+    }
+    else {
+      $('div.navbar').removeClass('navbar-default');
+      $('div.navbar-r-menu').removeClass('nav-down');
+    }
+});
+
+$(document).ready(function() {
+  // Add smooth scrolling to all links
+  var $root = $('html, body');
+  $('div.navbar-r-menu a').click(function() {
+    var href = $.attr(this, 'href');
+    $root.animate({
+      scrollTop: $(href).offset().top
+      }, 800, function () {
+      window.location.hash = href;
+    });
+    return false;
+  });
+});
+</script>
+
+<link rel="stylesheet" href="./css/assets/owl.carousel.css" />
+<link rel="stylesheet" href="./css/assets/owl.theme.default.css" />
+<link rel="stylesheet" href="./css/assets/animate.css" />
+
+<style type="text/css">
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+
+  .container-fluid {
+      padding: 0px 0px;
+  }
+
+.owl-carousel .owl-nav button.owl-prev {
+  position:absolute;
+  top:40%;
+  background-position:-30px 0;
+  background:url(./images/arrow_prev.png) no-repeat;
+  left:15px;
+  display:block;
+  width:30px;
+  height:30px;
+  -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  outline: none;
+  overflow:hidden;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  position:absolute;
+  top:40%;
+  background-position: 0px 0;
+  background:url(./images/arrow_next.png) no-repeat;
+  right:15px;
+  display:block;
+  width:30px;
+  height:30px;
+  -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+.caption {
+	position:absolute;
+	color:#fff;
+	width:100%;
+	z-index:998;
+	padding: 5px 10px;
+	opacity: 0.8;
+	overflow: hidden;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+  text-align: center;
+  vertical-align: center;
+}
+
+.caption p {
+	padding:5px;
+	margin:0;
+}
+.caption a {
+	display:inline !important;
+}
+
+.navbar-default {
+  background-color: #FFFFFF;
+  color: green;
+}
+
+.navbar-default {
+  background-color: #FFFFFF;
+  color: green;
+}
+
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+
+.navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+}
+
+.navbar-l {
+  float:left;
+  width: 150px;
+  margin:5px;
+}
+
+.navbar-r {
+  float: right;
+  margin-right:10px;
+  margin-top:10px;
+}
+
+.navbar-r-lang {
+  float:right;
+}
+.navbar-r-lang ul {
+  margin-top:10px;
+  padding:0;
+}
+
+.navbar-r-lang ul li {
+  list-style-type: none;
+  display: inline-table;
+
+}
+
+.navbar-r-menu {
+  margin-top:0px;
+}
+
+.nav-down ul li a h4 {
+  color: green;
+}
+
+.grey{
+    color: #7e7e7e;
+}
+.green{
+    color: #00462f;
+}
+.light-grey{
+    color: #939393;
+}
+.light-grey2{
+    color: #555;
+}
+
+.product-slider-title {
+  position: relative;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.container-fluid h2.title {
+  font-size: 30px !important;
+  letter-spacing: 10px !important;
+  color:green;
+  text-align:center;
+  padding-top:150px;
+  padding-bottom:50px;
+}
+
+.container-fluid h2 {
+  font-size: 20px !important;
+  color:green;
+  text-transform: uppercase;
+}
+
+.container-fluid .product-slider {
+  background-color: green;
+  height:400px;
+  display:inline-block;
+  width:100%;
+  margin:0px;
+}
+
+.container-fluid .product-slider_text h5 {
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-transform: none;
+  font-size:17px;
+}
+
+.container-fluid .product-slider_text a, a:focus {
+  text-decoration: none;
+}
+.container-fluid .product-slider_text a:hover {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+.container-fluid .p_item {
+  padding-top:10px;
+  display:inline-block;
+  height:350px;
+}
+
+.container-fluid .product-slider_text h2 {
+  color:#FFF;
+}
+
+.container-fluid .product-slider_text {
+  float:left;
+  width:50%;
+  display: inline-block;
+  padding-left:150px;
+  padding-top:20px;
+  min-height:300px;
+}
+
+.container-fluid .product-slider_item {
+  position:relative;
+  display:inline-block;
+  margin:0;
+}
+
+.container-fluid .product-slider_item h5 {
+  letter-spacing: 1px;
+  text-transform: none;
+  font-size:17px;
+}
+.container-fluid .product-slider_item a, a:focus {
+  text-decoration: none;
+}
+.container-fluid .product-slider_item a:hover {
+  text-decoration: underline;
+  color: #0000FF;
+}
+
+.container-fluid .p_news_item {
+  position:relative;
+  display:inline-block;
+  margin:0;
+  padding-top:10px;
+}
+
+.container-fluid .p_news_item h4 {
+  letter-spacing: 1px;
+  text-transform: none;
+  font-size:17px;
+}
+
+.container-fluid .p_news_item a, a:focus {
+  text-decoration: none;
+}
+.container-fluid .p_news_item a:hover {
+  text-decoration: underline;
+  color: #0000FF;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+  color: green;
+}
+</style>
+
+</head>
+
+<body id="medivina">
+<div class="container-fluid">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#medivina"><img src="./images/medivina.png" alt="Logo MediVina" style="height: 100px; display: inline-block; margin: 0px"></a>
+    </div>
+    <div class="navbar-r-menu collapse navbar-collapse" id="myNavbar">
+      <div class="navbar-r-lang">
+        <form class="navbar-form navbar-left" action="/">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" name="search">
+          </div>
+          <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
+        </form>
+        <ul class="navbar-r-lang">
+          <li>
+            <img src="./images/lang_en.jpg" class="thumbnail" alt="English" width="30" height="30"/>
+          </li>
+          <li>
+            <img src="./images/lang_vn.png" class="thumbnail" alt="Vietnamese" width="30" height="30"/>
+          </li>
+        </ul>
+      </div>
+     <div class="row-fluid">
+        <div class="col-sm-12" >
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about"><h2>Giới thiệu</h2></a></li>
+            <li><a href="#product"><h2>Sản phẩm</h2></a></li>
+            <li><a href="#service_policy"><h2>Chính sách phân phối</h2></a></li>
+            <li><a href="#contact"><h2>Liên hệ</h2></a></li>
+            <li><a href="#order"><h2>Đặt hàng</h2></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div id="owl-banner" class="owl-carousel owl-theme">
+    <div class="item">
+      <div class="caption" style="position:absolute;width:100%;height:50%;text-align:center;vertical-align:center;min-height:300px;top:50%;">
+        <strong><h2>WITH OUR 40 YEARS OF EXPERIENCE AND EXPERTISE<h2></strong> <br/> 
+        <h5>We are committed to make the most of the herbal benefits in creating a healthy community.</h5>
+      </div>
+      <img src="./images/banner2.jpg"/> 
+    </div>
+    <div class="item">
+      <div class="caption" style="position:absolute;width:100%;height:50%;text-align:center;vertical-align:center;min-height:300px;top:50%;">
+        <strong><h2>WITH OUR 40 YEARS OF EXPERIENCE AND EXPERTISE<h2></strong> <br/> 
+        <h5>We are committed to make the most of the herbal benefits in creating a healthy community.</h5>
+      </div>
+      <img src="./images/banner1.jpg"/> 
+    </div>
+    <div class="item">
+      <div  class="caption" style="position:absolute;width:100%;height:50%;text-align:center;vertical-align:center;min-height:300px;top:50%;">
+        <strong><h2>WITH OUR 40 YEARS OF EXPERIENCE AND EXPERTISE<h2></strong> <br/> 
+        <h5>We are committed to make the most of the herbal benefits in creating a healthy community.</h5>
+      </div>
+      <img src="./images/banner3.jpg"/> 
+    </div>
+    <div class="item">
+      <div  class="caption" style="position:absolute;width:100%;height:50%;text-align:center;vertical-align:center;min-height:300px;top:50%;">
+        <strong><h2>WITH OUR 40 YEARS OF EXPERIENCE AND EXPERTISE<h2></strong> <br/> 
+        <h5>We are committed to make the most of the herbal benefits in creating a healthy community.</h5>
+      </div>
+      <img src="./images/banner4.jpg"/> 
+    </div>
+    <div class="item">
+      <div  class="caption" style="position:absolute;width:100%;height:50%;text-align:center;vertical-align:center;min-height:300px;top:50%;">
+        <strong><h2>WITH OUR 40 YEARS OF EXPERIENCE AND EXPERTISE<h2></strong> <br/> 
+        <h5>We are committed to make the most of the herbal benefits in creating a healthy community.</h5>
+      </div>
+      <img src="./images/banner5.png"/> 
+    </div>
+ </div>
+</div>
+
+<div id="about" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+       <h2 class="title">ABOUT</h2>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="col-sm-10 col-sm-offset-2">
+      <div class="media">
+        <div class="media-body">
+          <h5 style="letter-spacing: 1px; text-transform: none; font-size:17px;">
+            We are committed to bringing you the best that nature has to offer.
+            For over 40 years, Deltomed Laboratories has been the leading producer of high quality, traditional herbal medicine in Indonesia.
+            Here at Deltomed, we believe that the key to good health lies in nature. Indonesia’s abundant herbal plants have gained both national and international recognition for their proven healing properties. Our mission is to integrate Indonesian local wisdom with scientific knowledge and state of the art technology to provide you with nature’s full potential.
+          </h5>
+        </div>
+        <div class="media-right">
+          <img src="./images/parallax-1.png" class="media-object" style="width:200px">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="product" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+       <h2 class="title">PRODUCTS</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="owl-carousel owl-theme product-slider">
+    <div class="p_item">
+        <div class="product-slider_text">
+          <h2>ANTANGIN JRG</h2>
+          <br/><h5>Also available in syrup form, Antangin JRG is formulated to relieve common cold and keep the body in healthy condition.</h5>
+          <br>
+          <a href="./product.html" /> <h5>Product Catalogue >> </h5></a>
+        </div>
+        <div style="position:absolute;top:80px;right:150px;">
+          <img style="overflow:hidden; width:300px; height:auto; display: inline-block;padding-top:20px;" src="./images/product1.png"/>
+        </div>
+    </div>
+    <div class="p_item">
+        <div class="product-slider_text">
+          <h2>ANTANGIN JUNIOR</h2>
+          <br/><h5>Antangin junior is a herbal syrup formulated to relieve common cold for children.</h5>
+          <br><a href="./product.html" /> <h5>Product Catalogue >> </h5></a>
+        </div>
+        <div style="position:absolute;top:80px;right:150px;">
+          <img style="overflow:hidden; width:300px; height:auto; display: inline-block;padding-top:20px;" src="./images/product2.png"/>
+        </div>
+    </div>
+    <div class="p_item">
+        <div class="product-slider_text">
+          <h2>RAPET WANGI</h2>
+          <br/><h5>Rapet Wangi is a herbal caplet formulated for women, to balance and maintain feminine health.</h5>
+          <br><a href="./product.html" /> <h5>Product Catalogue >> </h5></a>
+        </div>
+        <div style="position:absolute;top:20px;right:150px;">
+          <img style="overflow:hidden; width:250px; height:auto; display: inline-block; padding:20px;" src="./images/product3.png"/>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid" >
+    <div class="col-sm-6">
+       <div class="product-slider_item">
+          <div>
+            <h2>ANTALINU</h2>
+            <br/><h5>Antalinu is a herbal tablet formulated to restore energy and to relieve muscle pains and fatigue..</h5>
+            <br><a href="./product.html" /> <h5>>> Read More </h5></a>
+          </div>
+          <div style="float:right;">
+            <img style="overflow:hidden; width:120px; height:auto; display: inline-block; padding-top:10px;" src="./images/antalinu.png"/>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="product-slider_item" style="overflow:hidden;">
+          <div style="float:left;display: inline;">
+            <h2>OB HERBAL</h2>
+            <br/><h5>The number one all natural cough syrup, OB Herbal relieves coughs and soothes the throat..</h5>
+            <br><a href="./product.html" /> <h5> >> Read More </h5></a>
+          </div>
+          <div style="float:right;">
+            <img style="overflow:hidden; width:90px; height:auto; display: inline-block; padding-top:10px;" src="./images/ob-herbal.png"/>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="event" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+       <h2 class="title">NEWS/Sự kiện</h2>
+    </div>
+  </div>
+</div>
+<div id="news" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-4">
+      <div class="p_news_item" style="overflow:hidden;">
+          <div style="position:relative;">
+            <img style="overflow:hidden; width:100%; height:auto; display: inline-block; padding-bottom:10px;" src="./images/deltomed-30th-trade-expo.jpg"/>
+          </div>
+          <div style="position:relative;width:100%;display: inline;padding-top:0px;">
+            <h4>The number one all natural cough syrup, OB Herbal relieves coughs and soothes the throat..</h4>
+            <br><a href="./news.html" /> <h5>>> Read More</h5></a>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="p_news_item" style="overflow:hidden;">
+          <div style="position:relative;">
+            <img style="overflow:hidden; width:80%; height:auto; display: inline-block; padding-bottom:10px;" src="./images/deltomed-30th-trade-expo.jpg"/>
+          </div>
+          <div style="position:relative;width:70%;display: inline;padding-top:0px;">
+            <h4>The number one all natural cough syrup, OB Herbal relieves coughs and soothes the throat..</h4>
+            <br><a href="./news.html" /> <h5>>> Read More</h5></a>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="p_news_item" style="overflow:hidden;">
+          <div style="position:relative;">
+            <img style="overflow:hidden; width:80%; height:auto; display: inline-block; padding-bottom:10px;" src="./images/deltomed-30th-trade-expo.jpg"/>
+          </div>
+          <div style="position:relative;width:80%;display: inline;padding-top:0px;">
+            <h4>The number one all natural cough syrup, OB Herbal relieves coughs and soothes the throat..</h4>
+            <br><a href="./news.html" /> <h5>>> Read More</h5></a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+       <h2 class="title">CONTACT US/Liên hệ</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-6">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> 305/6 Lê Văn Sỹ Phường 1 Tân Bình Thành phố Hồ Chí Minh 700000 Việt Nam</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +84 090 225 63 60</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> lephuong@gmail.com </p>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="googleMap" style="height:400px;width:100%;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="service_policy" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+       <h2 class="title">Chính sách phân phối</h2>
+    </div>
+  </div>
+</div>
+
+<div id="feedback" class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+       <h2 class="title">Nhận xét từ khách hàng</h2>
+    </div>
+  </div>
+</div>
+
+<div id="footer" style="border-top:1px solid grey;">
+  <div class="container text-center">
+    <div class="row"> 
+      <div class="col-md-12"> 
+        <div class="left">
+        <span>305/6 Lê Văn Sỹ Phường 1 Tân Bình Thành phố Hồ Chí Minh 700000 Việt Nam
+        </span>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#medivina" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p><a href="http://www.linhvan.com" title="Visit LinhVan" target="_blank">www.linhvan.com</a></p>
+</footer>
+
+<!-- Add Google Maps -->
+<script>
+function myMap() {
+var mapProp = {
+    center:new google.maps.LatLng(10.794799, 106.666844),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnofvTdmyNauQ3NVuEmuIfzFzC8aOJeZ0&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
